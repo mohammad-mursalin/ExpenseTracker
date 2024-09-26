@@ -20,10 +20,10 @@ public class ExpenseController {
         this.service = service;
     }
 
-    @RequestMapping("/")
-    public String homepage() {
-        return "Welcome to the homepage of expense tracker ";
-    }
+//    @RequestMapping("/")
+//    public String homepage() {
+//        return "index.html ";
+//    }
 
     @GetMapping("/getExpense")
     public ResponseEntity<List<Expense>> getExpense() {
