@@ -3,8 +3,11 @@ package com.mursalin.ExpenseTracker.controller;
 import com.mursalin.ExpenseTracker.model.Expense;
 import com.mursalin.ExpenseTracker.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -17,29 +20,34 @@ public class ExpenseController {
         this.service = service;
     }
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String homepage() {
         return "Welcome to the homepage of expense tracker ";
     }
 
     @GetMapping("/getExpense")
-    public List<Expense> getExpense() {
-        return service.getExpense();
+    public ResponseEntity<List<Expense>> getExpense() {
+        BigDecimal totalExpense = service.getTotalExpence();
+        System.out.println(totalExpense);
+        return new ResponseEntity<>(service.getExpense(), HttpStatus.OK);
     }
 
-    @PostMapping("/addExpense{expense}")
-    public void addExpense(@RequestBody Expense expense) {
+    @PostMapping("/addExpense")
+    public ResponseEntity<?> addExpense(@RequestBody Expense expense) {
         service.addExpense(expense);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/addExpense{expense}")
-    public void updateExpense(@RequestBody Expense expense) {
+    @PutMapping("/updateExpense")
+    public ResponseEntity<?> updateExpense(@RequestBody Expense expense) {
         service.updateExpense(expense);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteExpense{id}")
-    public void deleteExpense(@PathVariable Long id) {
+    @DeleteMapping("/deleteExpense/{id}")
+    public ResponseEntity<?> deleteExpense(@PathVariable Long id) {
         service.deleteExpense(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
 

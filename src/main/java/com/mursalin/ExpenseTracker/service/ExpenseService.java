@@ -4,6 +4,7 @@ import com.mursalin.ExpenseTracker.model.Expense;
 import com.mursalin.ExpenseTracker.repository.ExpenseRepo;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -29,5 +30,9 @@ public class ExpenseService {
 
     public void deleteExpense(Long id) {
         repo.deleteById(id);
+    }
+
+    public BigDecimal getTotalExpence() {
+        return repo.sumOfExpense();
     }
 }
