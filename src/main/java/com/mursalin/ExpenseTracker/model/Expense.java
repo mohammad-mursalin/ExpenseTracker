@@ -14,11 +14,11 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Expance {
+public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String discription;
-    private BigDecimal expance;
+    private BigDecimal expense;
 }
