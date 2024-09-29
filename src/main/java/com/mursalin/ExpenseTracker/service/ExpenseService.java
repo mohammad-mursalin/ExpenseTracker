@@ -32,7 +32,7 @@ public class ExpenseService {
         repo.deleteById(id);
     }
 
-    public BigDecimal getTotalExpence() {
-        return repo.sumOfExpense();
+    public BigDecimal getTotalExpense() { // Fixed method name
+        return repo.sumOfExpense(); // Make sure this method exists in your repository
     }
 }

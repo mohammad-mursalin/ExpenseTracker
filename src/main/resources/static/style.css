@@ -1,9 +1,9 @@
 body {
-    background: url('/image/background.png') no-repeat center center fixed;
+    background: url('background.png') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    opacity: 0;
+    /* Remove or modify the opacity declaration */
     transition: opacity 0.5s ease-in-out;
 }
 

@@ -19,6 +19,6 @@ public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String discription;
+    private String discription; // Consistent usage of "discription"
     private BigDecimal expense;
 }

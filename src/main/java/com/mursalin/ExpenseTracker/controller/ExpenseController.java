@@ -22,12 +22,12 @@ public class ExpenseController {
 
 //    @RequestMapping("/")
 //    public String homepage() {
-//        return "index.html ";
+//        return "index.html";
 //    }
 
     @GetMapping("/getExpense")
     public ResponseEntity<List<Expense>> getExpense() {
-        BigDecimal totalExpense = service.getTotalExpence();
+        BigDecimal totalExpense = service.getTotalExpense(); // Fixed method name
         System.out.println(totalExpense);
         return new ResponseEntity<>(service.getExpense(), HttpStatus.OK);
     }
@@ -50,5 +50,3 @@ public class ExpenseController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
-
-

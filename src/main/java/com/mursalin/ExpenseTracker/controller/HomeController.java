@@ -10,4 +10,9 @@ public class HomeController {
     public String home() {
         return "index.html"; // Serve the index.html file
     }
+
+    @GetMapping("/addExpense")
+    public String addExpensePage() {
+        return "addExpense.html"; // Serve the index.html file
+    }
 }
