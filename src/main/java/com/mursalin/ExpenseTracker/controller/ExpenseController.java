@@ -27,9 +27,14 @@ public class ExpenseController {
 
     @GetMapping("/getExpense")
     public ResponseEntity<List<Expense>> getExpense() {
-        BigDecimal totalExpense = service.getTotalExpense(); // Fixed method name
-        System.out.println(totalExpense);
         return new ResponseEntity<>(service.getExpense(), HttpStatus.OK);
+    }
+
+    @GetMapping("/getTotalExpense")
+    public ResponseEntity<BigDecimal> getTotalExpense() {
+        BigDecimal totalAmount = service.getTotalExpense(); // Fixed method name
+        System.out.println(totalAmount);
+        return new ResponseEntity<>(totalAmount, HttpStatus.OK);
     }
 
     @PostMapping("/addExpense")
