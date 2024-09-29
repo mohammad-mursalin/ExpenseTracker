@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     var updatedExpense = {
       id: $('input[name=id]').val(),
-      description: $("#description").val(),
+      discription: $("#discription").val(),
       expense: $("#expense").val()
     };
 

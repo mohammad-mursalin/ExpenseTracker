@@ -15,4 +15,9 @@ public class HomeController {
     public String addExpensePage() {
         return "addExpense.html"; // Serve the index.html file
     }
+
+    @GetMapping("/editExpense")
+    public String updateExpensePage() {
+        return "updateExpense.html"; // Serve the index.html file
+    }
 }
