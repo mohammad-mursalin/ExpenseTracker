@@ -35,4 +35,9 @@ public class ExpenseService {
     public BigDecimal getTotalExpense() { // Fixed method name
         return repo.sumOfExpense(); // Make sure this method exists in your repository
     }
+
+    public Expense getExpenseById(Long id) {
+
+        return repo.findById(id).get();
+    }
 }
