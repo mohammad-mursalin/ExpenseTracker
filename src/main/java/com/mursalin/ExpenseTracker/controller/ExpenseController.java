@@ -46,12 +46,14 @@ public class ExpenseController {
     @PutMapping("/updateExpense")
     public ResponseEntity<?> updateExpense(@RequestBody Expense expense) {
         service.updateExpense(expense);
+        System.out.println("updated expense : " + expense);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/deleteExpense/{id}")
     public ResponseEntity<?> deleteExpense(@PathVariable Long id) {
         service.deleteExpense(id);
+        System.out.println("expense deleted: ");
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
