@@ -21,10 +21,12 @@ public class ExpenseService {
     }
 
     public void addExpense(Expense expense) {
+        System.out.println(expense);
         repo.save(expense);
     }
 
     public void updateExpense(Expense expense) {
+        System.out.println(expense);
         repo.save(expense);
     }
 
@@ -32,8 +34,8 @@ public class ExpenseService {
         repo.deleteById(id);
     }
 
-    public BigDecimal getTotalExpense() { // Fixed method name
-        return repo.sumOfExpense(); // Make sure this method exists in your repository
+    public BigDecimal getTotalExpense() { 
+        return repo.sumOfExpense(); 
     }
 
     public Expense getExpenseById(Long id) {
