@@ -11,6 +11,11 @@ public class HomeController {
         return "index.html"; // Serve the index.html file
     }
 
+    @GetMapping("/greet")
+    public String greet() {
+        return "api working fine";
+    }
+
     @GetMapping("/addExpense")
     public String addExpensePage() {
         return "addExpense.html"; // Serve the index.html file
